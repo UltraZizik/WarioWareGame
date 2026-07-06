@@ -1,0 +1,267 @@
+[gd_scene format=3 uid="uid://c8ldkqb1nw0yy"]
+
+[ext_resource type="Texture2D" uid="uid://jlv28p2688vl" path="res://files/images/background/Purple.png" id="1_tklhn"]
+[ext_resource type="PackedScene" uid="uid://8j3sxxnh4pqv" path="res://files/scenes/player.tscn" id="2_ls0pv"]
+[ext_resource type="Script" uid="uid://bl21mbqqemtui" path="res://files/scenes/apple.gd" id="3_1c5od"]
+[ext_resource type="Texture2D" uid="uid://7rtx823hqjti" path="res://files/images/pictures/apple.png" id="4_jek8h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_afu2c"]
+size = Vector2(39.660667, 38.857018)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ls0pv"]
+size = Vector2(17.46941, 17.591347)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8xxd"]
+size = Vector2(22, 707)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ii2u7"]
+size = Vector2(1512, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hm51p"]
+size = Vector2(16, 698)
+
+[sub_resource type="Animation" id="Animation_6bqny"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("apple/TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(642, 519)]
+}
+
+[sub_resource type="Animation" id="Animation_ktt7c"]
+resource_name = "floating"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("apple/TextureRect:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(642, 519), Vector2(641, 506.00006)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nrrf4"]
+_data = {
+&"RESET": SubResource("Animation_6bqny"),
+&"floating": SubResource("Animation_ktt7c")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_afu2c"]
+radius = 33.06055
+
+[node name="minigame1" type="Node2D" unique_id=568294527]
+
+[node name="background" type="TextureRect" parent="." unique_id=779443848]
+texture_filter = 1
+texture_repeat = 2
+offset_left = 1.0
+offset_top = 4.0
+offset_right = 4033.0
+offset_bottom = 2692.0
+scale = Vector2(0.58337426, 0.2706545)
+texture = ExtResource("1_tklhn")
+stretch_mode = 1
+
+[node name="background2" type="TextureRect" parent="." unique_id=736411878]
+texture_filter = 1
+texture_repeat = 2
+offset_left = 1.0
+offset_top = 4.0
+offset_right = 4033.0
+offset_bottom = 2692.0
+scale = Vector2(0.58337426, 0.2706545)
+texture = ExtResource("1_tklhn")
+stretch_mode = 1
+
+[node name="Scrolling_bg" type="Parallax2D" parent="." unique_id=1619202420]
+scale = Vector2(0.99246407, 1)
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="basePlatform" type="StaticBody2D" parent="." unique_id=1902782291]
+position = Vector2(-2, 689.00006)
+scale = Vector2(32.273766, 1.9301522)
+
+[node name="ColorRect" type="ColorRect" parent="basePlatform" unique_id=925439579]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.20343739, 0.09814917, 0.017680759, 0.9647059)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="basePlatform" unique_id=1882767107]
+position = Vector2(19.985271, 19.946594)
+scale = Vector2(1.0000007, 1)
+shape = SubResource("RectangleShape2D_afu2c")
+
+[node name="platfrom1" type="StaticBody2D" parent="." unique_id=1962368498]
+position = Vector2(68, 498)
+scale = Vector2(32.273766, 1.9301522)
+
+[node name="ColorRect" type="ColorRect" parent="platfrom1" unique_id=2067688454]
+offset_left = 13.819274
+offset_top = 44.03798
+offset_right = 53.819275
+offset_bottom = 84.03798
+scale = Vector2(0.27594984, 0.32119578)
+color = Color(0.20343739, 0.09814917, 0.017680759, 0.9647059)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platfrom1" unique_id=1551419527]
+position = Vector2(19.543736, 50.335754)
+rotation = -3.1415925
+scale = Vector2(0.625218, -0.6930952)
+shape = SubResource("RectangleShape2D_ls0pv")
+
+[node name="platform2" type="StaticBody2D" parent="." unique_id=1819194790]
+position = Vector2(-325, 389)
+scale = Vector2(32.273766, 1.9301522)
+
+[node name="ColorRect" type="ColorRect" parent="platform2" unique_id=787746931]
+offset_left = 13.819274
+offset_top = 44.03798
+offset_right = 53.819275
+offset_bottom = 84.03798
+scale = Vector2(0.27594984, 0.32119578)
+color = Color(0.20343739, 0.09814917, 0.017680759, 0.9647059)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform2" unique_id=319697785]
+position = Vector2(19.505014, 50.416275)
+rotation = -3.1415925
+scale = Vector2(0.62521785, -0.69309515)
+shape = SubResource("RectangleShape2D_ls0pv")
+
+[node name="platform3" type="StaticBody2D" parent="." unique_id=149690807]
+position = Vector2(146.99998, 282)
+scale = Vector2(32.273766, 1.9301522)
+
+[node name="ColorRect" type="ColorRect" parent="platform3" unique_id=1434937788]
+offset_left = 13.819274
+offset_top = 44.03798
+offset_right = 53.819275
+offset_bottom = 84.03798
+scale = Vector2(0.27594984, 0.32119578)
+color = Color(0.20343739, 0.09814917, 0.017680759, 0.9647059)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform3" unique_id=722006807]
+position = Vector2(19.505014, 50.416275)
+rotation = -3.1415925
+scale = Vector2(0.62521785, -0.69309515)
+shape = SubResource("RectangleShape2D_ls0pv")
+
+[node name="plaform4" type="StaticBody2D" parent="." unique_id=1723606747]
+position = Vector2(418.99997, 160)
+scale = Vector2(32.27377, 1.9301522)
+
+[node name="ColorRect" type="ColorRect" parent="plaform4" unique_id=94040486]
+offset_left = 13.819274
+offset_top = 44.03798
+offset_right = 53.819275
+offset_bottom = 84.03798
+scale = Vector2(0.27594984, 0.32119578)
+color = Color(0.20343739, 0.09814917, 0.017680759, 0.9647059)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plaform4" unique_id=1664514374]
+position = Vector2(19.50502, 50.375984)
+rotation = -3.1415925
+scale = Vector2(0.6252179, -0.6930952)
+shape = SubResource("RectangleShape2D_ls0pv")
+
+[node name="barrier_left" type="StaticBody2D" parent="." unique_id=1886303693]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="barrier_left" unique_id=1012593110]
+position = Vector2(0, 348.5)
+shape = SubResource("RectangleShape2D_b8xxd")
+
+[node name="Barier_up" type="StaticBody2D" parent="." unique_id=1887659363]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barier_up" unique_id=1789382279]
+position = Vector2(746, 0)
+shape = SubResource("RectangleShape2D_ii2u7")
+
+[node name="barrier_right" type="StaticBody2D" parent="." unique_id=1794921239]
+position = Vector2(1282, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="barrier_right" unique_id=749917477]
+position = Vector2(-2, 339)
+shape = SubResource("RectangleShape2D_hm51p")
+
+[node name="player" parent="." unique_id=286269436 instance=ExtResource("2_ls0pv")]
+position = Vector2(85, 640)
+
+[node name="apple" type="Node2D" parent="." unique_id=1510872968]
+position = Vector2(-11, -5)
+script = ExtResource("3_1c5od")
+
+[node name="TextureRect" type="TextureRect" parent="apple" unique_id=785245623]
+texture_filter = 1
+offset_left = 642.0
+offset_top = 519.0
+offset_right = 682.0
+offset_bottom = 559.0
+scale = Vector2(1.5585208, 1.5642375)
+texture = ExtResource("4_jek8h")
+
+[node name="Animation" type="AnimationPlayer" parent="apple" unique_id=778951638]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_nrrf4")
+
+[node name="Area2D" type="Area2D" parent="apple" unique_id=224611483]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="apple/Area2D" unique_id=1942899228]
+position = Vector2(674, 551)
+shape = SubResource("CircleShape2D_afu2c")
+
+[node name="apple2" type="Node2D" parent="." unique_id=1113099254]
+position = Vector2(-330, -111)
+
+[node name="TextureRect" type="TextureRect" parent="apple2" unique_id=1469954477]
+texture_filter = 1
+offset_left = 639.0
+offset_top = 512.0
+offset_right = 679.0
+offset_bottom = 552.0
+scale = Vector2(1.5585208, 1.5642375)
+texture = ExtResource("4_jek8h")
+
+[node name="Animation" type="AnimationPlayer" parent="apple2" unique_id=2007889587]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_nrrf4")
+
+[node name="Area2D" type="Area2D" parent="apple2" unique_id=555876854]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="apple2/Area2D" unique_id=102627093]
+position = Vector2(669, 545)
+shape = SubResource("CircleShape2D_afu2c")
+
+[node name="apple3" type="Node2D" parent="." unique_id=1369882759]
+position = Vector2(62, -216)
+
+[node name="TextureRect" type="TextureRect" parent="apple3" unique_id=55062617]
+texture_filter = 1
+offset_left = 639.0
+offset_top = 512.0
+offset_right = 679.0
+offset_bottom = 552.0
+scale = Vector2(1.5585208, 1.5642375)
+texture = ExtResource("4_jek8h")
+
+[node name="Animation" type="AnimationPlayer" parent="apple3" unique_id=504912206]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_nrrf4")
+
+[node name="Area2D" type="Area2D" parent="apple3" unique_id=1689483109]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="apple3/Area2D" unique_id=294371014]
+position = Vector2(669, 545)
+shape = SubResource("CircleShape2D_afu2c")
+
+[connection signal="apple_collected" from="apple" to="player" method="_on_apple_apple_collected"]

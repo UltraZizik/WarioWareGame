@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://3kjdvxwnyctl"]
 
 [ext_resource type="Texture2D" uid="uid://csccaqw0aw1rj" path="res://files/images/background/8-bit-graphics-pixels-scene-with-person-walking-dog-park.jpg" id="1_giewd"]
-[ext_resource type="Script" uid="uid://c3u7f060nbban" path="res://files/scenes/start.gd" id="2_wkxn1"]
+[ext_resource type="Script" uid="uid://c3u7f060nbban" path="res://files/scrpts/start.gd" id="2_wkxn1"]
 
 [node name="TitleScreen" type="Node2D" unique_id=1849082979]
 
