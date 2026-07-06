@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://3kjdvxwnyctl"]
+
+[ext_resource type="Texture2D" uid="uid://csccaqw0aw1rj" path="res://files/images/background/8-bit-graphics-pixels-scene-with-person-walking-dog-park.jpg" id="1_giewd"]
+[ext_resource type="Script" uid="uid://c3u7f060nbban" path="res://files/scenes/start.gd" id="2_wkxn1"]
+
+[node name="TitleScreen" type="Node2D" unique_id=1849082979]
+
+[node name="background" type="Sprite2D" parent="." unique_id=88551062]
+position = Vector2(638.49994, 365)
+scale = Vector2(0.31770834, 0.27008927)
+texture = ExtResource("1_giewd")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=850369346]
+clip_contents = false
+offset_left = 422.0
+offset_top = 116.0
+offset_right = 991.0
+offset_bottom = 254.0
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/normal_font_size = 108
+text = "WarioDog"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=856726792]
+offset_left = 540.0
+offset_top = 297.0
+offset_right = 779.0
+offset_bottom = 599.0
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=1461308000]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 40
+text = "Start"
+script = ExtResource("2_wkxn1")
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=1614202046]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 40
+text = "Settings"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=31611558]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="VBoxContainer/Start" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="VBoxContainer/Start" method="_on_quit_pressed"]
