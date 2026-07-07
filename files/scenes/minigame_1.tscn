@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://c8ldkqb1nw0yy"]
 
+[ext_resource type="Script" uid="uid://5d7nogec7atg" path="res://files/scrpts/minigame_1.gd" id="1_jek8h"]
 [ext_resource type="Texture2D" uid="uid://jlv28p2688vl" path="res://files/images/background/Purple.png" id="1_tklhn"]
 [ext_resource type="PackedScene" uid="uid://8j3sxxnh4pqv" path="res://files/scenes/player.tscn" id="2_ls0pv"]
-[ext_resource type="Script" uid="uid://bl21mbqqemtui" path="res://files/scenes/apple.gd" id="3_1c5od"]
+[ext_resource type="Script" uid="uid://bl21mbqqemtui" path="res://files/scrpts/apple.gd" id="3_1c5od"]
 [ext_resource type="Texture2D" uid="uid://7rtx823hqjti" path="res://files/images/pictures/apple.png" id="4_jek8h"]
+[ext_resource type="PackedScene" uid="uid://dfkpaowo45be4" path="res://files/scenes/minigametimer.tscn" id="6_6bqny"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_afu2c"]
 size = Vector2(39.660667, 38.857018)
@@ -60,9 +62,11 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_afu2c"]
 radius = 33.06055
 
-[node name="minigame1" type="Node2D" unique_id=568294527]
+[node name="minigame_1" type="Node2D" unique_id=568294527]
+script = ExtResource("1_jek8h")
 
 [node name="background" type="TextureRect" parent="." unique_id=779443848]
+visible = false
 texture_filter = 1
 texture_repeat = 2
 offset_left = 1.0
@@ -222,6 +226,7 @@ shape = SubResource("CircleShape2D_afu2c")
 
 [node name="apple2" type="Node2D" parent="." unique_id=1113099254]
 position = Vector2(-330, -111)
+script = ExtResource("3_1c5od")
 
 [node name="TextureRect" type="TextureRect" parent="apple2" unique_id=1469954477]
 texture_filter = 1
@@ -244,6 +249,7 @@ shape = SubResource("CircleShape2D_afu2c")
 
 [node name="apple3" type="Node2D" parent="." unique_id=1369882759]
 position = Vector2(62, -216)
+script = ExtResource("3_1c5od")
 
 [node name="TextureRect" type="TextureRect" parent="apple3" unique_id=55062617]
 texture_filter = 1
@@ -264,4 +270,9 @@ libraries/ = SubResource("AnimationLibrary_nrrf4")
 position = Vector2(669, 545)
 shape = SubResource("CircleShape2D_afu2c")
 
+[node name="MinigameTimer" parent="." unique_id=1636905274 instance=ExtResource("6_6bqny")]
+position = Vector2(597, 19)
+
 [connection signal="apple_collected" from="apple" to="player" method="_on_apple_apple_collected"]
+[connection signal="apple_collected" from="apple2" to="player" method="_on_apple_2_apple_collected"]
+[connection signal="apple_collected" from="apple3" to="player" method="_on_apple_3_apple_collected"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://8j3sxxnh4pqv"]
 
-[ext_resource type="Script" uid="uid://bpfw2kycqkice" path="res://files/scenes/player.gd" id="1_awkak"]
+[ext_resource type="Script" uid="uid://bpfw2kycqkice" path="res://files/scrpts/player.gd" id="1_awkak"]
 [ext_resource type="Texture2D" uid="uid://rxxwirvbcdhu" path="res://files/images/player/Idle (32x32).png" id="2_cci37"]
 [ext_resource type="Texture2D" uid="uid://bncwccti1e1b7" path="res://files/images/player/Jump (32x32).png" id="3_hgiin"]
 [ext_resource type="Texture2D" uid="uid://3txqfkdjtjx1" path="res://files/images/player/Run (32x32).png" id="4_4pnlb"]
@@ -190,6 +190,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8xxd"]
 size = Vector2(15.666668, 20.666668)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ii2u7"]
+size = Vector2(15.333334, 23.333334)
+
 [node name="player" type="CharacterBody2D" unique_id=286269436]
 texture_filter = 1
 scale = Vector2(3, 3)
@@ -199,8 +202,14 @@ script = ExtResource("1_awkak")
 sprite_frames = SubResource("SpriteFrames_b8xxd")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.109296545
+frame_progress = 0.11519443
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2118672218]
 position = Vector2(-0.16666627, 5.3333335)
 shape = SubResource("RectangleShape2D_b8xxd")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1894458309]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=522997346]
+position = Vector2(-0.33333325, 3.9999995)
+shape = SubResource("RectangleShape2D_ii2u7")

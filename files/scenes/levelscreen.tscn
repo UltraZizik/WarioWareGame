@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bdqdp7gptgabr"]
 
 [ext_resource type="Texture2D" uid="uid://cp86ntk46ddej" path="res://files/images/background/8-bit-graphics-pixels-scene-with-person-walking-dog-park (1).jpg" id="1_7snb5"]
-[ext_resource type="Script" uid="uid://cj0o5bf0lxdkh" path="res://files/scenes/Timerscreen.gd" id="1_i7yau"]
+[ext_resource type="Script" uid="uid://cj0o5bf0lxdkh" path="res://files/scrpts/timer_screen.gd" id="1_i7yau"]
 [ext_resource type="Texture2D" uid="uid://7rtx823hqjti" path="res://files/images/pictures/apple.png" id="3_6kfen"]
 
 [node name="Levelscreen" type="Node2D" unique_id=749932947]

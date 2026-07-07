@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://cxecerlrvokfm"]
+
+[ext_resource type="Script" uid="uid://1epmvh25i0eh" path="res://files/scrpts/minigame_2.gd" id="1_nv22r"]
+[ext_resource type="Texture2D" uid="uid://jlv28p2688vl" path="res://files/images/background/Purple.png" id="2_08vc5"]
+[ext_resource type="Texture2D" uid="uid://7rtx823hqjti" path="res://files/images/pictures/apple.png" id="3_1hnwt"]
+[ext_resource type="Script" uid="uid://cg1umf7qgkk44" path="res://files/scrpts/button_1.gd" id="4_wmesn"]
+[ext_resource type="PackedScene" uid="uid://dfkpaowo45be4" path="res://files/scenes/minigametimer.tscn" id="5_4ch3c"]
+
+[node name="minigame2" type="Node2D" unique_id=755872710]
+position = Vector2(-2, -4)
+script = ExtResource("1_nv22r")
+
+[node name="background2" type="TextureRect" parent="." unique_id=1364155921]
+texture_filter = 1
+texture_repeat = 2
+offset_left = 1.0
+offset_top = 4.0
+offset_right = 4033.0
+offset_bottom = 2692.0
+scale = Vector2(0.58337426, 0.2706545)
+texture = ExtResource("2_08vc5")
+stretch_mode = 1
+
+[node name="Button1" type="TextureButton" parent="." unique_id=1214209264]
+texture_filter = 1
+offset_left = 96.0
+offset_top = 169.0
+offset_right = 112.0
+offset_bottom = 188.0
+scale = Vector2(5, 5)
+texture_normal = ExtResource("3_1hnwt")
+script = ExtResource("4_wmesn")
+
+[node name="MinigameTimer" parent="." unique_id=1636905274 instance=ExtResource("5_4ch3c")]
+position = Vector2(604, 6)
+
+[node name="Button2" type="TextureButton" parent="." unique_id=378522346]
+texture_filter = 1
+offset_left = 639.99994
+offset_top = 212.0
+offset_right = 655.99994
+offset_bottom = 231.0
+scale = Vector2(5, 5)
+texture_normal = ExtResource("3_1hnwt")
+script = ExtResource("4_wmesn")
+
+[node name="Button3" type="TextureButton" parent="." unique_id=1287313094]
+texture_filter = 1
+offset_left = 428.99997
+offset_top = 462.99994
+offset_right = 444.99997
+offset_bottom = 481.99994
+scale = Vector2(5, 5)
+texture_normal = ExtResource("3_1hnwt")
+script = ExtResource("4_wmesn")
+
+[node name="Button4" type="TextureButton" parent="." unique_id=1247497514]
+texture_filter = 1
+offset_left = 1138.0
+offset_top = 391.0
+offset_right = 1154.0
+offset_bottom = 410.0
+scale = Vector2(5, 5)
+texture_normal = ExtResource("3_1hnwt")
+script = ExtResource("4_wmesn")
+
+[connection signal="pressed" from="Button1" to="Button1" method="_on_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
+[connection signal="pressed" from="Button3" to="Button3" method="_on_pressed"]
+[connection signal="pressed" from="Button4" to="Button4" method="_on_pressed"]

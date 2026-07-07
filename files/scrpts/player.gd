@@ -35,15 +35,3 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.flip_h = false
 	elif direction == -1.0:
 		animated_sprite_2d.flip_h = true
-
-
-func _on_apple_apple_collected() -> void:
-	pass # Replace with function body.
-
-
-func _on_apple_2_apple_collected() -> void:
-	pass # Replace with function body.
-
-
-func _on_apple_3_apple_collected() -> void:
-	pass # Replace with function body.

@@ -12,3 +12,6 @@ func _process(delta: float) -> void: # this runs EVERY FRAME!
 		if self.visible:
 			emit_signal("apple_collected") #signal broadcast
 			self.hide() #removed from player sight; collected
+			
+			if get_parent().has_method("apple_collect"):
+				get_parent().apple_collect()
