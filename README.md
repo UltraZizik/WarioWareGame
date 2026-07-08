@@ -27,9 +27,9 @@ Controls: Left Mouse Click.
 # Win & Loss States
 
 
-### The Win Screen : Success! You beat my minigames and unlocked eternal happines.
+The Win Screen : Success! You beat my minigames and unlocked eternal happines.
 
-### The Losing Screen : Too slow! Don't be scared to try again once more!
+The Losing Screen : Too slow! Don't be scared to try again once more!
 
 ## So i tried to implement a settings
 
