@@ -3,6 +3,12 @@ It is agame that is WarioWare like as the title suggests and it is filled with A
 
 <img width="1655" height="931" alt="Snímek obrazovky 2026-07-07 172542" src="https://github.com/user-attachments/assets/a030ba45-a463-4bd1-b0ca-304b528e8f77" />
 https://ultrazizik.itch.io/wariodog
+
+
+
+
+
+
 # Game Modes
 This project features two fast, dog-themed minigames:
 
